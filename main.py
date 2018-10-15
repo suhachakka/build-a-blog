@@ -13,12 +13,14 @@ class Blog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     body =db.Column(db.String(120))
-   # exists=db.Column(db.Boolean)
+    #date = db.column(db.DateTime)
+                    
 
-    def __init__(self,title,body):
+    def __init__(self,title,body): #date=None):
         self.title = title
         self.body = body
-        #self.exists= True
+        #if date == None:
+            #self.date = date
 
     def __repr__(self):
         return '<Blog %r>' % self.title   
@@ -36,9 +38,9 @@ def newpost():
     title =request.form['title']
     body =request.form['body']    
     if title == '':
-        t_error ='please fill in the body'
+        t_error ='please fill in the entry'
     if body == '':
-        b_error = 'please fill in the entry' 
+        b_error = 'please fill in the body' 
     if title != '' and  body != '' :
         new_blog=Blog(title,body)  
         db.session.add(new_blog) 
@@ -56,7 +58,8 @@ def blogpost():
         return render_template('Individualentrypage.html',blogs=blogs)
     if request.args.get('id') == None:
         
-        blogs = Blog.query.all()
+        #blogs = Blog.query.all()
+        blogs= Blog.query.order_by(Blog.id).all() #sorting the order
         
         return render_template('Mainblogpage.html',blogs=blogs)
 

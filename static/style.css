@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+    color: blue;
+   }
+ p{
+    font-family:Arial, Helvetica, sans-serif; 
+    color: green;
+ }
+ 
+   a{
+    display:inline-block;
+    color:brown;
+  }
+  .error{
+    color:red;
+
+  }
+  label{
+      color:rgb(252, 113, 0);
+  }

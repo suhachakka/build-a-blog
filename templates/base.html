@@ -2,28 +2,14 @@
 <html>
     <head>
     <title>Build A Blog</title>
-    <style>
-        h1{
-            text-align: center;
-        }
-        p{
-            font-family:Arial, Helvetica, sans-serif; 
-        }
-        nav{
-            display:inline-block;
-        }
-        .error{
-            color:red;
-        
-        }
-
-    </style>
+    <link rel="stylesheet" type ="text/css" href ="{{url_for('static', filename= 'style.css')}}">
     </head>
-<body>
+    <body>
    
-        <nav>
-           <a href ="/blog"><b>Main Blog Page</b></a> | 
-           <a href = "/newpost"><b>Add a Blog Entry</b></a>
+      <nav>
+      
+       <a href = " /blog " ><b>Main Blog Page</b></a> &NonBreakingSpace;&NonBreakingSpace;
+      <a href = " /newpost " ><b>Add a Blog Entry</b></a>
              
        </nav>
        
