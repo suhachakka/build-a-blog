@@ -10,8 +10,8 @@
    </tr>
    <tr>
        <td>
-           <input name ="title" type ="text" />
-           <p class ="error"><em>{{t_error}}</em></p>
+           <input name ="title" type ="text" value ="{{title}}"/>
+           <div class ="error"><em>{{t_error}}</em></div>
            
         </td>
    </tr>
@@ -21,8 +21,8 @@
     <br/>
    
        <label><b>Your new blog:</b></label><br>
-        <textarea name ="body" rows =8 cols = 25 ></textarea>
-        <p class ="error"><em>{{b_error}}</em></p>
+        <textarea name ="body" rows =8 cols = 25 >{{body}}</textarea>
+        <div class ="error"><em>{{b_error}}</em></div>
      <br/>
      <br/> 
      <br/>     

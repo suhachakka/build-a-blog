@@ -37,9 +37,9 @@ def newpost():
     b_error =''   
     title =request.form['title']
     body =request.form['body']    
-    if title == '':
+    if title == '' or body != '':
         t_error ='please fill in the entry'
-    if body == '':
+    if body == '' or title != '':
         b_error = 'please fill in the body' 
     if title != '' and  body != '' :
         new_blog=Blog(title,body)  
@@ -48,7 +48,7 @@ def newpost():
         #print("$$"+str(new_blog.id))
         return redirect('/blog?id='+str(new_blog.id) )       
     else:        
-        return render_template('Addblogentry.html',t_error=t_error,b_error=b_error)
+        return render_template('Addblogentry.html',title=title,body=body,t_error=t_error,b_error=b_error)
 @app.route('/blog')
 def blogpost():
     if request.args.get('id') != None:
