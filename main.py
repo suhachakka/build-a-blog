@@ -46,7 +46,7 @@ def newpost():
         db.session.add(new_blog) 
         db.session.commit() 
         #print("$$"+str(new_blog.id))
-        return redirect('/blog?id='+str(new_blog.id) )       
+        return redirect('/blog?id='+str(new_blog.id))       
     else:        
         return render_template('Addblogentry.html',title=title,body=body,t_error=t_error,b_error=b_error)
 @app.route('/blog')
@@ -59,7 +59,10 @@ def blogpost():
     if request.args.get('id') == None:
         
         #blogs = Blog.query.all()
-        blogs= Blog.query.order_by(Blog.id).all() #sorting the order
+        blogs= Blog.query.order_by("Blog.id desc").all() #sorting the order recet to old post
+
+        #blogs= Blog.query.order_by(Blog.id.desc()).all() #sorting the order recet to old post
+
         
         return render_template('Mainblogpage.html',blogs=blogs)
 
