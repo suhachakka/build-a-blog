@@ -59,7 +59,7 @@ def blogpost():
     if request.args.get('id') == None:
         
         #blogs = Blog.query.all()
-        blogs= Blog.query.order_by("Blog.id desc").all() #sorting the order recet to old post
+        blogs= Blog.query.order_by("Blog.id desc").all() #sorting the order recent to old post
 
         #blogs= Blog.query.order_by(Blog.id.desc()).all() #sorting the order recet to old post
 
